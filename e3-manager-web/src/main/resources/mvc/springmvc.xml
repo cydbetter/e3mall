@@ -17,15 +17,26 @@
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	http://www.springframework.org/schema/util
 	http://www.springframework.org/schema/util/spring-util.xsd">
+	
+	<!-- 引入properties文件 -->
+	<context:property-placeholder location="classpath:resources.properties"/>
+	
 	<!-- 一,扫描controller -->
 	<context:component-scan base-package="cn.e3mall.manager"></context:component-scan>
 	<!-- 放行静态资源 -->
 	<mvc:default-servlet-handler />
 	<!-- 二,注解驱动 -->
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven   />
 	<!-- 三,视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-	</beans>
+	<!-- 图片上传解析器 -->
+	<bean  id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设置最大上传大小，字节 -->
+		<property name="maxUploadSize"  value="10240000"></property>
+	</bean>
+	
+	
+</beans>

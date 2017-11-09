@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.e3mall.manager.service.ItemService;
 import cn.e3mall.pojo.TbItem;
+import cn.e3mall.pojo.TbItemDesc;
+import cn.e3mall.utils.E3mallResult;
 import cn.e3mall.utils.PageBeanResult;
 
 @Controller
@@ -43,6 +45,20 @@ public class ItemController {
 		PageBeanResult result = itemService.findItemsByPage(page, rows);
 		
 		return result;
+	}
+	
+	/**
+	 * 路径：/item/save
+	 * 参数：Item对象，ItemDesc对象
+	 * 返回：E3mallResult
+	 */
+	@RequestMapping("/save")
+	@ResponseBody
+	public E3mallResult saveItem(TbItem tbItem, TbItemDesc tbItemDesc) {
+		
+		E3mallResult e3mallResult = itemService.saveItem(tbItem, tbItemDesc);
+		
+		return e3mallResult;
 	}
 	
 	
