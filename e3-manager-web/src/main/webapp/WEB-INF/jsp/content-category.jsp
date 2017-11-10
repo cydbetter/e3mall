@@ -15,7 +15,7 @@ $(function(){
 	$("#contentCategory").tree({
 		url : '/content/category/list',
 		animate: true,
-		method : "GET",
+		method : "POST",
 		onContextMenu: function(e,node){
             e.preventDefault();
             $(this).tree('select',node.target);

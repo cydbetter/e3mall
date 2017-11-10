@@ -87,6 +87,14 @@
 			<artifactId>e3-manager-interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<!-- 引入content的service的接口 -->
+		<dependency>
+			<groupId>cn.e3mall</groupId>
+			<artifactId>e3-content-interface</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		
 		<!-- 上传文件 -->
 		<!-- <dependency>
 			<groupId>commons-fileupload</groupId>
