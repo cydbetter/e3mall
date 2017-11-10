@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="e3mall" version="2.5">
+	
+	<!-- 一,编码过滤器 -->
+	
+	<!-- 二,加载spring配置文件 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<!-- 
+			1,加载jar包配置文件:classpath*:扫描所有文件
+			2,把所有配置文件放入web工程,使用classpath
+				还能扫描dubbo-provider。xml配置，把service接口发布到zookeeper
+		 -->
+		<param-value>classpath:spring/*.xml</param-value>
+	</context-param>
+	
+	<!-- 三,加载springmvc配置文件 -->
+	
+</web-app>
